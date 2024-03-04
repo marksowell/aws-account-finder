@@ -1,4 +1,4 @@
-# aws-account-finder
+# AWS Account Finder
 Find the AWS Account ID of any S3 Bucket
 
 
