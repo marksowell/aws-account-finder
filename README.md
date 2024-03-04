@@ -74,11 +74,13 @@ Find the AWS Account ID of any S3 Bucket
    3. Install git `sudo yum install git -y`
    4. Clone this Githib repository `git clone https://github.com/marksowell/aws-account-finder.git`
    5. `cd aws-account-finder.git`
-   6. Configure and aws cli
-      1. `vi ~/.aws/credentials` set from your user creds
+   6. Configure aws cli
+      1. Set from your user creds using `vi ~/.aws/credentials`
          1. Ensure the `aws_access_key_id`, `aws_secret_access_key`, and `aws_session_token` are set under [default] or a profile you will specify in the `aws-account-finder.py` script
-         2. Test by using `aws sts get-caller-identity` Remember to use a profile if you set one with `--profile <PROFILE_NAME>`
-         3. Ensure you can assume the AWS account role you created earlier `aws sts assume-role --role-arn "arn:aws:iam::<YOUR_ACCOUNT_ID>:role/<YOUR_ROLE>" --role-session-name "test"` Remember to use a profile if you set one with `--profile <PROFILE_NAME>`
+      2. Set your region and output using `vi ~/.aws/config` 
+         1. Ensure the `region = YOUR_REGION` and `output = json` are set under [default] or a profile you will specify in the `aws-account-finder.py` script
+   7. Test by using `aws sts get-caller-identity` Remember to use a profile if you set one with `--profile <PROFILE_NAME>`
+   8. Ensure you can assume the AWS account role you created earlier `aws sts assume-role --role-arn "arn:aws:iam::<YOUR_ACCOUNT_ID>:role/<YOUR_ROLE>" --role-session-name "test"` Remember to use a profile if you set one with `--profile <PROFILE_NAME>`
    7. Run the `aws_account_finder.py` script
       1. Usage: `python aws_account_finder.py <profile> <bucket>`
   
