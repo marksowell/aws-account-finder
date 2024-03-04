@@ -74,7 +74,7 @@ AWS account IDs, while not directly exploitable, can inadvertently assist attack
        6. Under `Data events > Data event > Data event type` in the `Select a source` dropdown select `S3`
        7. Click `Next`
        8. Click `Create trail`
-4. Connect to EC2 instance using SSH
+4. Connect to your EC2 instance using SSH
    1. Install pip `sudo yum install python3-pip -y`
    2. Install boto3 `pip3 install boto3`
    3. Install git `sudo yum install git -y`
