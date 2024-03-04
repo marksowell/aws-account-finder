@@ -17,9 +17,10 @@ Find the AWS Account ID of any S3 Bucket
       1. Select Amazon Linux (Default settings including t2.micro are OK)
       2. Under `Key pair` select an existing key pair name or create a new key pair
       3. Under `Network settings` ensure the `Network` and `Subnet` are set to the VPC and subnet you created earlier
-      4. Under `Firewall` select `Create security group` and check `Allow SSH traffic from` `Anywhere` and `Allow HTTPS traffic from the internet`
-      5. Click `Launch instance`
-      6. After the instance has been created select the instance and under `Instance state` select `Start instance`
+      4. Under `Firewall` select `Create security group`
+      5. Check `Allow SSH traffic from` `Anywhere` and `Allow HTTPS traffic from the internet`
+      6. Click `Launch instance`
+      7. After the instance has been created select the instance and under `Instance state` select `Start instance`
    5. Under `VPC > Endpoints` click `Create endpoint`
       1. Select AWS services
       2. Under `Services` find and select the `com.amazonaws.<REGION>.s3 amazon Interface` service
