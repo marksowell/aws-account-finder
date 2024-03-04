@@ -89,7 +89,7 @@ This tool is provided for educational and security research purposes only. Use i
    `cd aws-account-finder`
    6. Configure aws cli ([Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html))  
    `vi ~/.aws/credentials`  
-   Ensure the **aws_access_key_id**, **aws_secret_access_key**, and **aws_session_token** are set under [default] or a profile you will specify in the **aws-account-finder.py** script  
+   Ensure the **aws_access_key_id**, **aws_secret_access_key**, and **aws_session_token** (if you are using temporary credentials) are set under [default] or a profile you will specify in the **aws-account-finder.py** script  
    `vi ~/.aws/config`  
    Ensure the **region = YOUR_REGION** and **output = json** are set under [default] or a profile you will specify in the **aws-account-finder.py** script
    7. Test to ensure aws cli is configured correctly  
