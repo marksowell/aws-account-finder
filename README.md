@@ -1,6 +1,12 @@
 # AWS Account Finder
 Find the AWS Account ID of any S3 Bucket
 
+## Introduction
+
+AWS account IDs, while not directly exploitable, can inadvertently assist attackers in mapping out potential targets, particularly when probing for publicly accessible buckets or other exposed AWS resources lacking proper security controls. This information can serve as a critical piece in the puzzle for orchestrating sophisticated social engineering attacks or crafting targeted phishing campaigns. In scenarios where additional vulnerabilities or misconfigurations exist, the knowledge of an account ID could facilitate permission escalation attempts or enable attackers to circumvent resource-based policies that utilize account IDs as a condition.
+
+## Setting it all up
+
 1. Find the region for the S3 bucket  
     `curl -I bucket-name.s3.amazonaws.com`  
            Look for the `x-amz-bucket-region` header in the response
