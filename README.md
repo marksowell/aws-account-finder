@@ -6,14 +6,24 @@ Find an AWS Account ID from any S3 Bucket
 While AWS account IDs cannot be used alone to gain access or control over resources, they can assist security professionals in identifying potential targets, particularly when probing for exposed AWS resources without adequate security controls. They can also contribute to the effectiveness of social engineering attacks or targeted phishing campaigns. In situations where vulnerabilities or misconfigurations exist, the knowledge of an account ID might be used to attempt permission escalation or to navigate around resource-based policies that include account IDs as a condition.
 
 **Disclaimer:
-This tool is provided for educational and security research purposes only. Use it responsibly and only with explicit permission from the owners of the AWS resources.**
+This tool is provided for educational and security research purposes only. Use only with explicit permission from the owners of the AWS resources.**
 
-## Setting it all up
+## Features
 
-1. Find the region for the S3 bucket
+- Find an AWS Account ID from any S3 Bucket
+- Assist in security assessments and research
+- Supports AWS CLI profiles
+
+## Prerequisites
+
+- An AWS account
+
+## Setup Instructions
+
+### 1. Find the region for the S3 bucket
    1. `curl -I bucket-name.s3.amazonaws.com`
    2. Look for the **x-amz-bucket-region** header in the response
-2. Login to your AWS Console
+### 2. Login to your AWS Console
    1. Set the region to the same region as the S3 bucket in the dropdown at the top of the page
    2. Under **VPC > Your VPCs** click **Create a VPC**
       1. Select VPC only
@@ -76,7 +86,7 @@ This tool is provided for educational and security research purposes only. Use i
        6. Under **Data events > Data event > Data event type** in the **Select a source** dropdown select **S3**
        7. Click **Next**
        8. Click **Create trail**
-3. Connect to your EC2 instance using SSH
+### 3. Connect to your EC2 instance using SSH
    1. Install pip  
    `sudo yum install python3-pip -y`
    2. Install boto3  
@@ -87,12 +97,12 @@ This tool is provided for educational and security research purposes only. Use i
    `git clone https://github.com/marksowell/aws-account-finder.git`
    5. Navigate to the aws-account-finder project directory  
    `cd aws-account-finder`
-   6. Configure aws cli ([Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html))  
+   6. Configure AWS CLI ([Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html))  
    `vi ~/.aws/credentials`  
    Ensure the **aws_access_key_id**, **aws_secret_access_key**, and **aws_session_token** (if you are using temporary credentials) are set under [default] or a profile you will specify in the **aws-account-finder.py** script  
    `vi ~/.aws/config`  
    Ensure the **region = YOUR_REGION** and **output = json** are set under [default] or a profile you will specify in the **aws-account-finder.py** script
-   7. Test to ensure aws cli is configured correctly  
+   7. Test to ensure AWS CLI is configured correctly  
    `aws sts get-caller-identity`  
    *Remember to use a profile if you set one with `--profile <PROFILE_NAME>`
    8. Ensure you can assume the AWS account role you created earlier  
