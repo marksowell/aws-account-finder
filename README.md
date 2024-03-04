@@ -2,10 +2,10 @@
 Find the AWS Account ID of any S3 Bucket
 
 1. Find the region for the S3 bucket  
-    `curl -I bucket-name.s3.amazonaws.com`  
-    Look for the `x-amz-bucket-region header` in the response.
+    `curl -I bucket-name.s3.amazonaws.com`
+           Look for the `x-amz-bucket-region header` in the response.
 
-2. Login to your AWS Console
+3. Login to your AWS Console
    1. Set the region to the same region as the S3 bucket in the dropdown at the top of the page.
    2. Under `VPC > Your VPCs` click `Create a VPC`
       1. Select VPC only
@@ -67,7 +67,7 @@ Find the AWS Account ID of any S3 Bucket
        6. Under `Data events > Data event > Data event type` in the `Select a source` dropdown select `S3`
        7. Click `Next`
        8. Click `Create trail`
-3. Connect to EC2 instance using SSH
+4. Connect to EC2 instance using SSH
    1. Install pip `sudo yum install python3-pip -y`
    2. Install boto3 `pip3 install boto3`
    3. Install git `sudo yum install git -y`
