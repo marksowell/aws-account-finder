@@ -90,7 +90,7 @@ AWS account IDs, while not directly exploitable, can inadvertently assist attack
    9. The `aws_account_finder.py` script relies on 2 environment variables that can be set with the following 2 commands
       1. `export AWS_REGION='<YOUR_REGION>'`
       2. `export ROLE_ARN='arn:aws:iam::<YOUR_ACCOUNT_ID>:role/<YOUR_ROLE>'`
-      3. Alternatively, they can be set in your `.bash_profile` using `vi ~/.bash_profile` and adding the 2 lines above. Apply the changes by logging out and back in or running the command `source ~/.bash_profile`
+      3. Alternatively, they can be set in your `.bash_profile` using `vi ~/.bash_profile` and adding the 2 lines above and applying the changes by logging out and back in or running the command `source ~/.bash_profile`
    12. Run the `aws_account_finder.py` script
       1. Usage: `python aws_account_finder.py <profile> <bucket>`
   
