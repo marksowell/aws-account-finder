@@ -29,7 +29,7 @@ AWS account IDs, while not directly exploitable, can inadvertently assist attack
       7. After the instance has been created select the instance and under `Instance state` select `Start instance`
    5. Under `VPC > Endpoints` click `Create endpoint`
       1. Select AWS services
-      2. Under `Services` find and select the `com.amazonaws.<REGION>.s3 amazon Interface` service
+      2. Under `Services` find and select the `com.amazonaws.<YOUR_REGION>.s3 amazon Interface` service
       3. Under `VPC` select your VPC
       4. Under `Additional settings`
          1. Check `Enable DNS name`
@@ -87,7 +87,11 @@ AWS account IDs, while not directly exploitable, can inadvertently assist attack
          1. Ensure the `region = YOUR_REGION` and `output = json` are set under [default] or a profile you will specify in the `aws-account-finder.py` script
    7. Test by using `aws sts get-caller-identity` Remember to use a profile if you set one with `--profile <PROFILE_NAME>`
    8. Ensure you can assume the AWS account role you created earlier `aws sts assume-role --role-arn "arn:aws:iam::<YOUR_ACCOUNT_ID>:role/<YOUR_ROLE>" --role-session-name "test"` Remember to use a profile if you set one with `--profile <PROFILE_NAME>`
-   7. Run the `aws_account_finder.py` script
+   9. The `aws_account_finder.py` script relies on 2 environment variables that can be set with the following 2 commands
+      1. `export AWS_REGION='<YOUR_REGION>'`
+      2. `export ROLE_ARN='arn:aws:iam::<YOUR_ACCOUNT_ID>:role/<YOUR_ROLE>'`
+      3. Alternatively, they can be set in your `.bash_profile` using `vi ~/.bash_profile` and adding the 2 lines above. Apply the changes by logging out and back in or running the command `source ~/.bash_profile`
+   12. Run the `aws_account_finder.py` script
       1. Usage: `python aws_account_finder.py <profile> <bucket>`
   
 ## Acknowledgements
