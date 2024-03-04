@@ -3,7 +3,7 @@ Find the AWS Account ID of any S3 Bucket
 
 1. Find the region for the S3 bucket  
     `curl -I bucket-name.s3.amazonaws.com`  
-           Look for the `x-amz-bucket-region header` in the response.
+           Look for the `x-amz-bucket-region` header in the response.
 
 3. Login to your AWS Console
    1. Set the region to the same region as the S3 bucket in the dropdown at the top of the page.
@@ -22,7 +22,7 @@ Find the AWS Account ID of any S3 Bucket
       6. After the instance has been created select the instance and under `Instance state` select `Start instance`
    5. Under `VPC > Endpoints` click `Create endpoint`
       1. Select AWS services
-      2. Under `Services` find and select the `com.amazonaws.us-west-1.s3 amazon Interface` service
+      2. Under `Services` find and select the `com.amazonaws.<REGION>.s3 amazon Interface` service
       3. Under `VPC` select your VPC
       4. Under `Additional settings`
          1. Check `Enable DNS name`
@@ -77,6 +77,8 @@ Find the AWS Account ID of any S3 Bucket
       1. `vi ~/.aws/credentials` set from your user creds
          1. Ensure the `aws_access_key_id`, `aws_secret_access_key`, and `aws_session_token` are set under [default] or a profile you will specify in the `aws-account-finder.py` script
          2. Test by using `aws sts get-caller-identity` Remember to use a profile if you set one
+   7. Run the `aws_account_finder.py` script
+      1. Usage: `python aws_account_finder.py <profile> <bucket>`
   
 ## Acknowledgements
 
