@@ -30,7 +30,7 @@ Find the AWS Account ID of any S3 Bucket
          2. Uncheck `Enable private DNS only for inbound endpoint`
       5. In `Subnets` check the box for the `Availability Zone` with your subnet in the dropdown
       6. In Security groups select the security group you created with your EC2 instance
-      7. In the Policy select Custom and copy the policy.py from the GitHub repository
+      7. In the Policy select Custom and copy the `policy.py` from [here](https://raw.githubusercontent.com/marksowell/aws-account-finder/main/policy.json)
       8. Click `Create endpoint`
    6. Under `VPC > Elastic IPs` click `Allocate Elastic IP address`
       1. Click `Allocate`
