@@ -2,7 +2,7 @@
 Find the AWS Account ID of any S3 Bucket
 
 1. Find the region for the S3 bucket  
-    `curl -I bucket-name.s3.amazonaws.com`
+    `curl -I bucket-name.s3.amazonaws.com`  
            Look for the `x-amz-bucket-region header` in the response.
 
 3. Login to your AWS Console
