@@ -118,7 +118,7 @@ This tool is provided for educational and security research purposes only. Use o
 ### Usage example
 
 ```bash
-python aws_account_finder.py default bucket-test
+python aws_account_finder.py default bucket-name
 ```
   
 ## Acknowledgements
