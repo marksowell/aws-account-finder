@@ -114,6 +114,12 @@ This tool is provided for educational and security research purposes only. Use o
    Alternatively, they can be set in your **.bash_profile** using `vi ~/.bash_profile`, adding the 2 lines above, and applying the changes by logging out and back in or running the command `source ~/.bash_profile`
    10. Run the **aws_account_finder.py** script  
    `python aws_account_finder.py <profile> <bucket>`
+
+### Usage example
+
+```bash
+python aws_account_finder.py default bucket-test
+```
   
 ## Acknowledgements
 
