@@ -3,7 +3,7 @@ Find an AWS Account ID from any S3 Bucket
 
 ## Introduction
 
-While AWS account IDs cannot be used alone to gain access or control over resources, they can assist security professionals in identifying potential targets, particularly when probing for exposed AWS resources without adequate security controls. They can also contribute to the effectiveness of social engineering attacks or targeted phishing campaigns. In situations where vulnerabilities or misconfigurations exist, the knowledge of an account ID might be used to attempt permission escalation or to navigate around resource-based policies that include account IDs as a condition.
+AWS account IDs alone cannot be used to gain access or control over resources. However, they can be used by security professionals to identify potential targets, particularly when searching for exposed AWS resources without adequate security controls. Account IDs can also contribute to the effectiveness of social engineering attacks or targeted phishing campaigns. In AWS environments where other vulnerabilities or misconfigurations exist, an account ID could be used to escalate privileges or bypass resource-based policies that include account IDs as a condition.
 
 **Disclaimer:
 This tool is provided for educational and security research purposes only. Use only with explicit permission from the owners of the AWS resources.**
